@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>{}</style>
+</head>
+
+<body>
+	<div class="window">
+		<div class="tab">{}</div>
+		{}
+	</div>
+	<div class="config_panel">
+		<form onsubmit="import_vars(event)" id="submitter">
+			<input type="file" name="filename" accept="application/yaml">
+			<input type="submit" value="Import Configuration">
+		</form>
+		<form onsubmit="download('export.yaml', export_vars())">
+			<input type="submit" value="Export Configuration">
+		</form>
+	</div>
+
+	<script>{}{}</script>
+</body>
+
+</html>

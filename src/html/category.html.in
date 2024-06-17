@@ -1,0 +1,4 @@
+<div class="category" id="{}" style="display: none;">
+	<h1>{}</h1>
+	<div class="category_content">{}</div>
+</div>

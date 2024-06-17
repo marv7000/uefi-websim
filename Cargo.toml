@@ -1,0 +1,11 @@
+[package]
+name = "uefi-websim"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7.5", features = ["macros"] }
+convert_case = "0.6.0"
+serde = { version = "1.0.203", features = ["serde_derive"] }
+serde_yaml = "0.9.34"
+tokio = { version = "1.38.0", features = ["full"] }

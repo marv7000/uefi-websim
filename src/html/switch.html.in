@@ -1,0 +1,8 @@
+<div class="switch option">
+	<label>{}
+		<div class="selection">
+			<input id="{}" type="checkbox" class="config" autocomplete="off" {}>
+		</div>
+	</label>
+
+</div>

@@ -1,0 +1,7 @@
+<div class="dropdown option">
+	<label>{}
+		<div class="selection">
+			<select id="{}" name="{}" autocomplete="off" class="container config">{}</select>
+		</div>
+	</label>
+</div>

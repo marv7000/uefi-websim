@@ -1,0 +1,201 @@
+style: lenovo
+categories:
+  - name: Main
+    type: Category
+    entries:
+      - type: Home
+        vars:
+          - UEFI BIOS Version
+          - UEFI BIOS Date(Year-Month-Day)
+          - Embedded Controller Version
+          - ME Firmware Version
+          - Machine Type Module
+          - System-unit serial number
+          - System board serial number
+          - Asset Tag
+          - CPU Type
+          - CPU Speed
+          - Installed memory
+          - UUID
+          - MAC Address(Internal LAN)
+          - Preinstalled OS License
+          - UEFI Secure Boot
+          - OA3 ID
+          - OA2
+  - name: Config
+    type: Category
+    entries:
+      - name: Network
+        type: Menu
+        entries:
+          - name: Wake On LAN
+            type: Dropdown
+            desc: |
+              AC Only: Wake On LAN function works only when AC is attached.
+              AC and Battery: Wake On LAN function works with both AC and battery.
+              Note that AC is required with magic packet type wake On LAN.
+              Wake On LAN function may be blocked due to password configuration.
+            default: AC Only
+            values:
+              - AC Only
+              - Disabled
+              - AC and Battery
+          - name: Wake On LAN from Dock
+            type: Switch
+            desc: |
+              Enable/Disable Wake On LAN from Dock function works only when ThinkPad USB-C Dock or ThinkPad Thunderbolt 3 Dock is attached.
+              Note that Wake On LAN from Dock function may be blocked due to password configuration.
+            default: true
+          - name: HTTPS Boot
+            type: Switch
+            desc: |
+              Enable/Disable HTTPs Boot for Corporate environment. Boot URI and Boot File must be set by DHCP server.
+          - name: Lenovo Cloud Services
+            type: Switch
+            desc: |
+              Enable/Disable Lenovo Cloud Services. If Enabled, System connects Lenovo Cloud Services via HTTPs. DHCP option settings are not required.
+            default: true
+          - name: UEFI Wi-Fi Network Boot
+            type: Switch
+            desc: |
+              Enable/Disable UEFI Wi-Fi Network Boot. If change to "On",UEFI Wi-Fi driver is loaded at next boot and can connect to Access point.
+              Secure Boot must be enabled to use UEFI Wi-Fi Network Boot.
+          - name: UEFI IPv4 Network Stack
+            type: Switch
+            desc: |
+              Enable/Disable UEFI IPv4 Network Stack for UEFI environment.
+            default: true
+          - name: UEFI IPv6 Network Stack
+            type: Switch
+            desc: |
+              Enable/Disable UEFI IPv6 Network Stack for UEFI environment.
+            default: true
+          - name: UEFI Network Boot Priority
+            type: Dropdown
+            desc: |
+              Select Network Stack priority for UEFI PXE Boot.
+            values:
+              - IPv6 First
+              - IPv4 First
+            default: IPv4 First
+          - name: Wireless Auto Disconnection
+            type: Switch
+            desc: |
+              Enable/Disable Wireless Auto Disconnection feature when Ethernet cable is connected to Ethernet LAN on system. If Enabled, Wireless LAN radios is automatically turned off whenever Ethernet cable is connected.
+              Note that Ethernet attached by USB is not supported by this feature.
+          - name: MAC Address Pass Through
+            type: Dropdown
+            desc: |
+              MAC Address Pass Through function when dock is attached.
+              <Internal MAC Address> Dock Ethernet uses same MAC Address as Internal LAN.
+              <Second MAC Address> Dock Ethernet uses same MAC Address as Second MAC Address.
+              <Disabled> Dock Ethernet uses its own MAC Address.
+            values:
+              - Disabled
+              - Internal MAC Address
+              - Second MAC Address
+      - name: USB
+        type: Menu
+        entries:
+          - name: Always On USB
+            type: Switch
+            desc: |
+              The USB ports can charge external device during low power states (standby,hibernate or power-off). If the system runs on battery mode,this works only in standby state.
+              <Off> USB ports are disabled during low power states.
+              <On> USB ports are powered during low power states.
+            default: true
+      - name: Keyboard/Mouse
+        type: Menu
+        entries:
+          - name: TrackPoint
+            type: Switch
+            desc: |
+              Enables or disables built-TrackPoint.
+              <Off> Built-in TrackPoint is disabled.
+              <On> Built-in TrackPoint is enabled.
+            default: true
+          - name: Trackpad
+            type: Switch
+            desc: |
+              Enables or disables built-in trackpad.
+              <Off> Built-in trackpad is disabled.
+              <On> Built-in trackpad is enabled.
+            default: true
+          - name: Fn and Ctrl Key swap
+            type: Switch
+            desc: |
+              Enables exchange of Fn and Ctrl key action at lower left of keyboard.
+              <Off> Fn key and Ctrl key behavior is as printed on the keyboad.
+              <On> Fn key works as Ctrl key. Ctrl key workds as Fn key.
+              Note:Bottom-Left key will wake the system from sleep state.
+          - name: Fn Sticky Key
+            type: Switch
+            desc: |
+              When enabled, you can press the Fn key to keep it in a pressed condition,then press the desired function key.
+              The action is equivalent to pressing the required key and the Fn key simultaneously.When you pressed the Fn key twice, the state is locked until you press the Fn key again.
+          - name: F1-F12 as Primary Function
+            type: Switch
+            desc: |
+              Enable the F1-F12 function or the special function printed as an icon on each key as the primary function.
+              <On> Executes the F1-F12 function.
+              <Off> Executes the special function.
+              Alternatively,to switch above two options,press Fn+Esc to use FnLk.LED is on when FnLk is enabled.
+          - name: Keyboard Layout
+            type: Dropdown
+            desc: |
+              Select keyboard layout in pre-OS environment. This configuration not affect OS.
+            values:
+              - US English
+              - German
+              - Italian
+              - French
+              - Japanese
+  - name: Startup
+    type: Category
+    entries:
+      - name: Network Boot
+        type: Dropdown
+        desc: |
+          Select top priority of the Boot Priority Order when waking from LAN
+        default: PXE BOOT
+        values:
+          - USB CD
+          - USB FDD
+          - NVMe0
+          - NVMe1
+          - ATA HDD0
+          - ATA HDD1
+          - USB HDD
+          - PXE BOOT
+          - HTTPS BOOT
+          - LENOVO CLOUD
+          - Other CD
+          - Other HDD
+      - name: Boot Mode
+        type: Dropdown
+        desc: |
+          <Quick>
+          The diagnostic splash screen does not display unless you press Esc during boot.
+          <Diagnostics>
+          The diagnostic splash screen always displays during boot.
+        values:
+          - Quick
+          - Diagnostics
+vars:
+  UEFI BIOS Version: N2WHT01W
+  UEFI BIOS Date(Year-Month-Day): 2019-09-26
+  Embedded Controller Version: N2WET01W
+  ME Firmware Version: XX.X.XX.XXXX
+  Machine Type Module: 20T0
+  System-unit serial number: PF12345
+  System board serial number: L112345678
+  Asset Tag: No Asset Information
+  CPU Type: Intel(R) Core(TM) CPU
+  CPU Speed: 1.X00GHz
+  Installed memory: 8192MB
+  UUID: 79498acc-3133-11b2-a85c-123412341234
+  MAC Address(Internal LAN): 54 XX 75 XX 31 XX
+  Preinstalled OS License: XX
+  UEFI Secure Boot: On
+  OA3 ID: XX
+  OA2: Yes
