@@ -1,0 +1,325 @@
+style: gaming
+categories:
+  - type: Category
+    name: Main
+    entries:
+      - type: Home
+        vars:
+          - UEFI BIOS Version
+          - BIOS Date
+          - CPU Type
+          - CPU Speed
+          - Installed Memory
+          - GPU Type
+          - GPU Memory
+          - System Serial Number
+          - Motherboard Model
+          - RGB Controller Version
+          - Fan Controller Version
+          - UEFI Secure Boot
+          - XMP Profile
+          - CPU Temperature
+          - System Temperature
+  - type: Category
+    name: Overclocking
+    entries:
+      - name: CPU Configuration
+        type: Menu
+        entries:
+          - name: CPU Ratio
+            type: Dropdown
+            desc: |
+              Adjust CPU multiplier to overclock the processor.
+              Higher values may require increased voltage and better cooling.
+              Use at your own risk.
+            default: Auto
+            values:
+              - Auto
+              - 36x
+              - 37x
+              - 38x
+              - 39x
+              - 40x
+              - 41x
+              - 42x
+              - 43x
+              - 44x
+              - 45x
+              - 46x
+              - 47x
+              - 48x
+              - 49x
+              - 50x
+          - name: CPU Core Voltage
+            type: Dropdown
+            desc: |
+              Set the CPU core voltage.
+              Higher voltages may improve stability but increase heat output.
+              Use at your own risk.
+            default: Auto
+            values:
+              - Auto
+              - 1.20V
+              - 1.25V
+              - 1.30V
+              - 1.35V
+              - 1.40V
+              - 1.45V
+          - name: AVX Offset
+            type: Dropdown
+            desc: |
+              Set a negative offset to the CPU ratio when running AVX workloads.
+              This can improve stability during heavy AVX workloads.
+            default: Auto
+            values:
+              - Auto
+              - '0'
+              - '-1'
+              - '-2'
+              - '-3'
+              - '-4'
+              - '-5'
+          - name: CPU Load-line Calibration
+            type: Dropdown
+            desc: |
+              Controls how much the CPU voltage drops under load.
+              Higher levels reduce voltage drop but increase heat.
+            default: Auto
+            values:
+              - Auto
+              - Level 1
+              - Level 2
+              - Level 3
+              - Level 4
+              - Level 5
+      - name: Memory Configuration
+        type: Menu
+        entries:
+          - name: XMP Profile
+            type: Dropdown
+            desc: |
+              Enable XMP (Extreme Memory Profile) to run memory at advertised speeds.
+              Disable for maximum stability.
+            default: Disabled
+            values:
+              - Disabled
+              - Profile 1
+              - Profile 2
+          - name: Memory Frequency
+            type: Dropdown
+            desc: |
+              Set memory frequency. Higher frequencies may require XMP and stability testing.
+            default: Auto
+            values:
+              - Auto
+              - 2133 MHz
+              - 2400 MHz
+              - 2666 MHz
+              - 2933 MHz
+              - 3200 MHz
+              - 3600 MHz
+              - 4000 MHz
+              - 4400 MHz
+          - name: DRAM Voltage
+            type: Dropdown
+            desc: |
+              Set memory voltage. Higher voltages may be required for overclocking.
+              Use at your own risk.
+            default: Auto
+            values:
+              - Auto
+              - 1.20V
+              - 1.25V
+              - 1.30V
+              - 1.35V
+              - 1.40V
+              - 1.45V
+              - 1.50V
+      - name: GPU Configuration
+        type: Menu
+        entries:
+          - name: Integrated Graphics
+            type: Switch
+            desc: |
+              Enable or disable the integrated graphics processor.
+              Disable when using a dedicated GPU for maximum performance.
+            default: true
+          - name: Primary Display
+            type: Dropdown
+            desc: |
+              Select which graphics processor to use as the primary display.
+            default: Auto
+            values:
+              - Auto
+              - IGFX
+              - PCIE
+              - PCI
+          - name: IGFX Memory
+            type: Dropdown
+            desc: |
+              Set the amount of system memory allocated to the integrated graphics.
+            default: 64MB
+            values:
+              - 32MB
+              - 64MB
+              - 128MB
+              - 256MB
+              - 512MB
+  - type: Category
+    name: RGB Lighting
+    entries:
+      - name: RGB Control
+        type: Menu
+        entries:
+          - name: RGB Lighting
+            type: Switch
+            desc: |
+              Enable or disable all RGB lighting on the motherboard and connected devices.
+            default: true
+          - name: RGB Mode
+            type: Dropdown
+            desc: |
+              Select the RGB lighting effect.
+            default: Static
+            values:
+              - Static
+              - Breathing
+              - Strobe
+              - Rainbow
+              - Flash
+              - Wave
+              - Reactive
+          - name: RGB Color
+            type: Dropdown
+            desc: |
+              Select the primary color for RGB lighting when in Static mode.
+            default: Red
+            values:
+              - Red
+              - Green
+              - Blue
+              - Yellow
+              - Cyan
+              - Magenta
+              - White
+          - name: RGB Speed
+            type: Dropdown
+            desc: |
+              Set the speed of RGB lighting effects.
+            default: Medium
+            values:
+              - Slow
+              - Medium
+              - Fast
+              - Ultra Fast
+          - name: RGB Brightness
+            type: Dropdown
+            desc: |
+              Set the brightness level of RGB lighting.
+            default: 100%
+            values:
+              - 25%
+              - 50%
+              - 75%
+              - 100%
+  - type: Category
+    name: Fan Control
+    entries:
+      - name: Fan Profiles
+        type: Menu
+        entries:
+          - name: CPU Fan Profile
+            type: Dropdown
+            desc: |
+              Select a fan curve profile for the CPU fan.
+            default: Standard
+            values:
+              - Silent
+              - Standard
+              - Turbo
+              - Full Speed
+              - Custom
+          - name: Chassis Fan 1 Profile
+            type: Dropdown
+            desc: |
+              Select a fan curve profile for the first chassis fan.
+            default: Standard
+            values:
+              - Silent
+              - Standard
+              - Turbo
+              - Full Speed
+              - Custom
+          - name: Chassis Fan 2 Profile
+            type: Dropdown
+            desc: |
+              Select a fan curve profile for the second chassis fan.
+            default: Standard
+            values:
+              - Silent
+              - Standard
+              - Turbo
+              - Full Speed
+              - Custom
+          - name: Water Pump Speed
+            type: Dropdown
+            desc: |
+              Set the speed for the AIO water pump header.
+            default: Standard
+            values:
+              - Silent
+              - Standard
+              - Full Speed
+  - type: Category
+    name: Boot
+    entries:
+      - name: Boot Configuration
+        type: Menu
+        entries:
+          - name: Fast Boot
+            type: Switch
+            desc: |
+              Enable for faster system boot by skipping certain POST checks.
+              Disable for maximum compatibility.
+            default: true
+          - name: Boot Logo Display
+            type: Switch
+            desc: |
+              Show the motherboard logo during POST.
+            default: true
+          - name: Boot Mode
+            type: Dropdown
+            desc: |
+              Select the boot mode for the system.
+            default: UEFI
+            values:
+              - UEFI
+              - Legacy
+              - CSM
+          - name: Boot Priority
+            type: Dropdown
+            desc: |
+              Select the device to boot from first.
+            default: NVME
+            values:
+              - NVME
+              - SATA
+              - USB
+              - Network
+              - Optical
+vars:
+  UEFI BIOS Version: ROG-GAMING-1.23
+  BIOS Date: 2025-03-16
+  CPU Type: AMD Ryzen 9 7950X
+  CPU Speed: 5.7 GHz
+  Installed Memory: 32768 MB
+  GPU Type: NVIDIA GeForce RTX 4090
+  GPU Memory: 24576 MB
+  System Serial Number: ROG123456789
+  Motherboard Model: ROG CROSSHAIR X670E EXTREME
+  RGB Controller Version: 3.5.7
+  Fan Controller Version: 2.1.0
+  UEFI Secure Boot: On
+  XMP Profile: Profile 1
+  CPU Temperature: 35°C
+  System Temperature: 32°C
