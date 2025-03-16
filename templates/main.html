@@ -3,13 +3,19 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>{}</style>
+	<style>
+		{
+				{
+				css|safe
+			}
+		}
+	</style>
 </head>
 
 <body>
 	<div class="window">
-		<div class="tab">{}</div>
-		{}
+		<div class="tab">{{ tabs|safe }}</div>
+		{{ body|safe }}
 	</div>
 	<div class="config_panel">
 		<form onsubmit="import_vars(event)" id="submitter">
@@ -20,8 +26,7 @@
 			<input type="submit" value="Export Configuration">
 		</form>
 	</div>
-
-	<script>{}{}</script>
+	<script>{ { vars | safe } } { { js | safe } }</script>
 </body>
 
 </html>
