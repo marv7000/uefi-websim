@@ -80,7 +80,9 @@ for (i = 0; i < coll.length; i++) {
 // Update home page values
 for (let key in custom_variables) {
 	var elem = document.getElementById(key);
-	elem.textContent = custom_variables[key];
+	if (elem) {
+		elem.textContent = custom_variables[key];
+	}
 }
 
 // Category tabs

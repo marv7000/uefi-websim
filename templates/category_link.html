@@ -1,1 +1,4 @@
-<button class="tablinks" onclick="openCategory(event, '{{ id }}')">{{ name }}</button>
+<button class="tablinks" onclick="openCategory(event, '{{ id }}')">
+	{{ icon_html|safe }}
+	<span>{{ name }}</span>
+</button>

@@ -1,7 +1,51 @@
 style: gaming
+layout: horizontal
+icons: svg
+simulation:
+  enabled: true
+  update_interval: 1000  # milliseconds
+  clock: true
+  cpu_status: true
+  fan_status: true
+  thermal_status: true
+  dependencies:
+    - name: CPU Temperature
+      affects:
+        - CPU Fan Speed
+      ranges:
+        - min: 30
+          max: 45
+          value: 1200
+        - min: 46
+          max: 60
+          value: 1800
+        - min: 61
+          max: 75
+          value: 2400
+        - min: 76
+          max: 100
+          value: 3600
+    - name: System Temperature
+      affects:
+        - Chassis Fan 1 Speed
+        - Chassis Fan 2 Speed
+      ranges:
+        - min: 25
+          max: 35
+          value: 800
+        - min: 36
+          max: 45
+          value: 1200
+        - min: 46
+          max: 60
+          value: 1800
+        - min: 61
+          max: 100
+          value: 2400
 categories:
   - type: Category
     name: Main
+    icon: home
     entries:
       - type: Home
         vars:
@@ -20,8 +64,13 @@ categories:
           - XMP Profile
           - CPU Temperature
           - System Temperature
+          - CPU Fan Speed
+          - Chassis Fan 1 Speed
+          - Chassis Fan 2 Speed
+          - Current Time
   - type: Category
     name: Overclocking
+    icon: overclock
     entries:
       - name: CPU Configuration
         type: Menu
@@ -167,6 +216,7 @@ categories:
               - 512MB
   - type: Category
     name: RGB Lighting
+    icon: rgb
     entries:
       - name: RGB Control
         type: Menu
@@ -224,6 +274,7 @@ categories:
               - 100%
   - type: Category
     name: Fan Control
+    icon: fan
     entries:
       - name: Fan Profiles
         type: Menu
@@ -272,6 +323,7 @@ categories:
               - Full Speed
   - type: Category
     name: Boot
+    icon: boot
     entries:
       - name: Boot Configuration
         type: Menu
@@ -323,3 +375,7 @@ vars:
   XMP Profile: Profile 1
   CPU Temperature: 35°C
   System Temperature: 32°C
+  CPU Fan Speed: 1200 RPM
+  Chassis Fan 1 Speed: 800 RPM
+  Chassis Fan 2 Speed: 800 RPM
+  Current Time: --:--:--
